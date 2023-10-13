@@ -1,6 +1,8 @@
 export const getStorage = (key) => {
   const value = window.localStorage.getItem(key)
-  if (!value) return
+  if (value === 'no token') {
+    return
+  }
   return JSON.parse(value);
 }
 
